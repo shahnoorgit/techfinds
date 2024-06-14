@@ -6,6 +6,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { SignIn, SignInButton } from "@clerk/nextjs";
 
 import React from "react";
 import { CiHeart } from "react-icons/ci";
@@ -21,21 +22,26 @@ const MobileSheet = () => {
           <GiHamburgerMenu className=" text-3xl" />
         </SheetTrigger>
         <SheetContent className=" bg-gray-100">
-          <aside className=" flex flex-col gap-5 w-full h-full">
-            <span className=" border-b border-gray-400 text-gray-900 font-light text-2xl max-sm:text-lg">
-              TechFinds
-            </span>
-            <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
-              <TfiPackage className=" text-2xl" />
-              <span className=" text-lg font-semibold">Orders</span>
+          <aside className=" flex flex-col justify-center w-full h-full">
+            <div className="flex flex-col gap-5 w-full h-full">
+              <span className=" border-b border-gray-400 text-gray-900 font-light text-2xl max-sm:text-lg">
+                TechFinds
+              </span>
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
+                <TfiPackage className=" text-2xl" />
+                <span className=" text-lg font-semibold">Orders</span>
+              </div>
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
+                <CiHeart className="text-2xl" />
+                <span className=" text-lg font-semibold">Wishlist</span>
+              </div>
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
+                <CiHeart className="text-2xl" />
+                <span className=" text-lg font-semibold">Wishlist</span>
+              </div>
             </div>
-            <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
-              <CiHeart className="text-3xl" />
-              <span className=" text-lg font-semibold">Wishlist</span>
-            </div>
-            <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-10 w-full">
-              <CiHeart className="text-3xl" />
-              <span className=" text-lg font-semibold">Wishlist</span>
+            <div className="flex flex-col gap-5 w-full h-full">
+              <SignInButton />
             </div>
           </aside>
         </SheetContent>

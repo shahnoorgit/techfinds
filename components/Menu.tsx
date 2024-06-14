@@ -22,19 +22,19 @@ const Menu = () => {
       <div className=" flex justify-center items-center gap-3">
         <div className=" flex max-sm:hidden gap-2 cursor-pointer hover:border-2 hover:border-blue-800 transition-all ease-out  p-2 rounded-lg items-center justify-center">
           <FaRegUserCircle className=" text-gray-900 text-2xl" />
-          <span className=" font-thin text-lg text-gray-900 max-sm:text-lg">
+          <span className=" font-semibold text-lg text-gray-900 max-sm:text-lg">
             Login
           </span>
         </div>
         <div className=" flex gap-2 hover:border-2 hover:border-blue-800 transition-all ease-out cursor-pointer p-2 rounded-lg items-center justify-center">
           <FaShoppingCart className=" max-sm:text-lg text-gray-900 text-2xl" />
-          <span className=" max-sm:hidden max-md:hidden font-thin text-lg text-gray-900">
+          <span className=" max-sm:hidden max-md:hidden font-semibold text-lg text-gray-900">
             Cart
           </span>
         </div>
         <div className=" max-sm:hidden max-md:hidden flex gap-2 hover:border-2 hover:border-blue-800 transition-all ease-out cursor-pointer p-2 rounded-lg items-center justify-center">
           <GiShop className=" text-gray-900 text-2xl" />
-          <span className=" font-thin text-lg text-gray-900">
+          <span className=" font-semibold text-lg text-gray-900">
             Become Seller
           </span>
         </div>
