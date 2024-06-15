@@ -2,6 +2,8 @@ import React from "react";
 import { FaRegUserCircle, FaShoppingCart } from "react-icons/fa";
 import { GiShop } from "react-icons/gi";
 import MobileSheet from "./MobileSheet";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 const Menu = () => {
   return (
@@ -21,10 +23,18 @@ const Menu = () => {
       </div>
       <div className=" flex justify-center items-center gap-3">
         <div className=" flex max-sm:hidden gap-2 cursor-pointer hover:border-2 hover:border-blue-800 transition-all ease-out  p-2 rounded-lg items-center justify-center">
-          <FaRegUserCircle className=" text-gray-900 text-2xl" />
-          <span className=" font-semibold text-lg text-gray-900 max-sm:text-lg">
-            Login
-          </span>
+          <SignedOut>
+            <FaRegUserCircle className=" text-gray-900 text-2xl" />
+            <Link
+              href={"/sign-in"}
+              className=" font-semibold text-lg text-gray-900 max-sm:text-lg"
+            >
+              Login
+            </Link>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
         <div className=" flex gap-2 hover:border-2 hover:border-blue-800 transition-all ease-out cursor-pointer p-2 rounded-lg items-center justify-center">
           <FaShoppingCart className=" max-sm:text-lg text-gray-900 text-2xl" />
