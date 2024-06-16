@@ -1,6 +1,7 @@
 import mongoose, { Mongoose } from "mongoose";
 
 const MongoDB_URL = process.env.MONGODB_URI;
+console.log(MongoDB_URL);
 
 interface MongooseConnection {
   conn: Mongoose | null;

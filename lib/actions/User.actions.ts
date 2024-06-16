@@ -15,7 +15,7 @@ export async function createUser(user: Iuser) {
       photo,
       wishlist: [],
       orders: [],
-      role: "user",
+      role: "customer",
     });
 
     return JSON.parse(JSON.stringify(newUser));
