@@ -4,11 +4,12 @@ import User from "../database/models/User.model";
 import { handleError } from "../utils";
 
 export async function createUser(user: Iuser) {
-  const { name, email, username, clerkid, photo } = user;
+  const { first_name, last_name, email, username, clerkid, photo } = user;
   await connectToMongodb();
   try {
     const newUser = await User.create({
-      name,
+      first_name,
+      last_name,
       email,
       username,
       clerkid,
