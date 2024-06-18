@@ -12,7 +12,7 @@ export async function createUser(user: Iuser) {
       last_name,
       email,
       username,
-      clerkid,
+      clerkid: clerkid,
       photo,
       wishlist: [],
       orders: [],
