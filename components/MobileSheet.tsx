@@ -14,6 +14,7 @@ import {
   SignInButton,
   SignOutButton,
   UserButton,
+  useSession,
 } from "@clerk/nextjs";
 import Link from "next/link";
 
@@ -28,12 +29,14 @@ import {
   IoMdLogIn,
 } from "react-icons/io";
 import { LuSmartphone } from "react-icons/lu";
+import { MdDashboard } from "react-icons/md";
 import { SlOptionsVertical } from "react-icons/sl";
 import { TbCategory } from "react-icons/tb";
 import { TfiPackage } from "react-icons/tfi";
 
 const MobileSheet = () => {
   const [expandcat, setExpandcat] = useState(false);
+  const { session } = useSession();
   return (
     <>
       <Sheet>
@@ -46,6 +49,12 @@ const MobileSheet = () => {
               <span className=" border-b border-gray-400 text-gray-900 font-light text-2xl max-sm:text-lg">
                 TechFinds
               </span>
+              {session?.user.username == "admin" && (
+                <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm">
+                  <MdDashboard className=" text-2xl" />
+                  <span className=" text-lg font-semibold">Dashboard</span>
+                </div>
+              )}
               <div className="hover:bg-blue-400 transition-all ease-in rounded-xl hover:text-white flex flex-col p-5">
                 <div
                   onClick={() => setExpandcat(!expandcat)}
