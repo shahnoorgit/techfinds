@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { FaRegUserCircle, FaShoppingCart } from "react-icons/fa";
 import { GiShop } from "react-icons/gi";
 import MobileSheet from "./MobileSheet";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const Menu = () => {
   return (
@@ -33,7 +35,7 @@ const Menu = () => {
             </Link>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <UserButton afterSignOutUrl="/" />
           </SignedIn>
         </div>
         <div className=" flex gap-2 hover:border-2 hover:border-blue-800 transition-all ease-out cursor-pointer p-2 rounded-lg items-center justify-center">

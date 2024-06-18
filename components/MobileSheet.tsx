@@ -21,7 +21,7 @@ import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { CiHeart } from "react-icons/ci";
 import { FaHeadphones, FaHeart, FaLaptop } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiShop } from "react-icons/gi";
 import {
   IoIosArrowDropdownCircle,
   IoIosArrowDropupCircle,
@@ -86,29 +86,33 @@ const MobileSheet = () => {
                 )}
               </div>
 
-              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full">
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm">
                 <CgProfile className=" text-2xl" />
                 <span className=" text-lg font-semibold">My Profile</span>
               </div>
-              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full">
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm">
                 <TfiPackage className=" text-2xl" />
                 <span className=" text-lg font-semibold">Orders</span>
               </div>
-              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full">
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm">
                 <FaHeart className="text-2xl" />
                 <span className=" text-lg font-semibold">Wishlist</span>
+              </div>
+              <div className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm">
+                <GiShop className=" text-gray-900 text-2xl" />
+                <span className=" text-lg font-semibold">Become a Seller</span>
               </div>
             </div>
             <div className=" w-full h-64 border-t justify-end border-gray-400 flex flex-col gap-2">
               <SignedIn>
-                <div>
-                  <UserButton showName />
-                </div>
+                <li className=" bg-gray-200 rounded-lg shadow-xl flex justify-center items-center cursor-pointer gap-2 p-4">
+                  <UserButton showName afterSignOutUrl="/" />
+                </li>
               </SignedIn>
               <SignedOut>
                 <Link
                   href={"/sign-in"}
-                  className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full"
+                  className="flex hover:bg-blue-400 transition-all ease-in hover:text-white rounded-lg p-5 cursor-pointer gap-2 justify-start items-center h-16 w-full max-sm:text-sm"
                 >
                   <IoMdLogIn className="text-2xl" />
                   <span className=" text-lg font-semibold">Login</span>

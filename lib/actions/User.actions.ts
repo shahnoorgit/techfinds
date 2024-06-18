@@ -51,3 +51,16 @@ export async function updateUser(id: string, user: ClerkUserUpdateProps) {
     console.log(error);
   }
 }
+
+export async function updateRole(_id: string, role: string) {
+  await connectToMongodb();
+  try {
+    const updatedUser = await User.updateOne({
+      _id: _id,
+      role: role,
+    });
+    return JSON.parse(JSON.stringify(updatedUser));
+  } catch (error) {
+    console.log(error);
+  }
+}
