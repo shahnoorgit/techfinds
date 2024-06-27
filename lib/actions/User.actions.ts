@@ -64,3 +64,14 @@ export async function updateRole(_id: string, role: string) {
     console.log(error);
   }
 }
+
+export async function addproduct({
+  name,
+  price,
+  description,
+  category,
+  condition,
+  usedSpan,
+  image,
+  creatorId,
+}: AddProductsProps) {}

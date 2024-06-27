@@ -10,3 +10,14 @@ declare type ClerkUserUpdateProps = {
   email: string;
   photo: string;
 };
+
+declare type AddProductsProps = {
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  condition: string;
+  usedSpan?: number;
+  image: string;
+  creatorId: string;
+};
